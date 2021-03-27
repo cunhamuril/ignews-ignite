@@ -1,5 +1,7 @@
 import styles from "./styles.module.scss";
 
+import SignInButton from "../SignInButton";
+
 const Header: React.FC = () => {
   return (
     <header className={styles.headerContainer}>
@@ -9,6 +11,8 @@ const Header: React.FC = () => {
           <a className={styles.active}>Home</a>
           <a>Posts</a>
         </nav>
+
+        <SignInButton />
       </div>
     </header>
   );
