@@ -1,6 +1,8 @@
-import styles from "./styles.module.scss";
+import { ActiveLink } from "components/ActiveLink";
 
 import SignInButton from "../SignInButton";
+
+import styles from "./styles.module.scss";
 
 const Header: React.FC = () => {
   return (
@@ -8,8 +10,14 @@ const Header: React.FC = () => {
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt="Logo" />
         <nav>
-          <a className={styles.active}>Home</a>
-          <a>Posts</a>
+          <ActiveLink href="/" activeClassName={styles.active}>
+            <a>Home</a>
+          </ActiveLink>
+
+          {/* prefetch: pré carrega a página antes de acessá-la */}
+          <ActiveLink href="/posts" prefetch activeClassName={styles.active}>
+            <a>Posts</a>
+          </ActiveLink>
         </nav>
 
         <SignInButton />
